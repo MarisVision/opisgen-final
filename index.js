@@ -12,9 +12,7 @@ export default function Home() {
     setOutput('');
     const res = await fetch('/api/generate', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ input, lang })
     });
     const data = await res.json();
@@ -26,13 +24,7 @@ export default function Home() {
     <main style={{ background: '#121212', color: '#fff', minHeight: '100vh', padding: '2rem', textAlign: 'center' }}>
       <h1 style={{ color: '#ffd700' }}>OpisGen AI</h1>
       <p>Profesionalni AI alati za pisanje opisa proizvoda</p>
-      <input
-        type="text"
-        placeholder="Unesi naziv proizvoda"
-        value={input}
-        onChange={e => setInput(e.target.value)}
-        style={{ padding: '10px', width: '80%', maxWidth: '400px', margin: '10px' }}
-      />
+      <input type="text" placeholder="Unesi naziv proizvoda" value={input} onChange={e => setInput(e.target.value)} style={{ padding: '10px', width: '80%', maxWidth: '400px', margin: '10px' }} />
       <br />
       <select value={lang} onChange={e => setLang(e.target.value)} style={{ padding: '10px' }}>
         <option value="hr">Hrvatski</option>
